@@ -1,0 +1,33 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>Enter employee</h2>
+    <form action="" method="post" name="add employee">
+        {{ form.hidden_tag() }}
+        <p>
+            <div>First name: {{ form.first_name(size=40) }} </div>
+			<div>Last Name: {{ form.last_name(size=40) }} </div>
+			<div>Address: {{ form.address(size=80) }} </div>
+        </p>
+        <p><input type="submit" value="Enter"></p>
+		<p>{{ msg }} </p>
+		<p>
+		{% for d in dist %}
+		<div>
+		{{ d.fname }} {{ d.lname }}: {{ d.di.destination_addresses }}
+			{% for e in d.di.rows %}
+				{% for n in e.elements %}
+				<div>
+					{{ n }}
+					<!-- Distance: {{ n.distance.text }}, travel time: {{ n.duration.text }} -->
+				</div>
+				{% endfor %}
+			{% endfor %}
+			<div>--<div>
+		{% endfor %}
+		</div>
+		</p>
+    </form>
+{% endblock %}

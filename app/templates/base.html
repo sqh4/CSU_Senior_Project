@@ -1,0 +1,24 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - Senior Project</title>
+    {% else %}
+    <title>Senior Project</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>Senior Project: <a href="/index">Home</a> <a href="/addemp">Enter Employee</a> 
+	<a href="/addclient">Enter Client</a> <a href="/distances">View Distance Matrix</a></div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>

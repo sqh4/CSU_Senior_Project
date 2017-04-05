@@ -1,0 +1,18 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>List of employees</h2>
+    {% for employee in employees %}
+    <div>
+      {{ employee.fname }} {{ employee.lname }}: {{employee.address}}
+    </div>
+    {% endfor %}
+
+    <h2>List of clients</h2>
+    {% for client in clients %}
+    <div>
+      {{ client.fname }} {{ client.lname }}: {{client.address}}
+    </div>
+    {% endfor %}
+{% endblock %}
