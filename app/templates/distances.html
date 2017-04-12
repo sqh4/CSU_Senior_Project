@@ -2,9 +2,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Raw Distance Matrix</h2>
+    <h2>Distances between Employees and Clients</h2>
     <p>
-      {{ distances }}
+      {% for d in distances %}
+		<div>
+		Travel info for <b>{{ d.fname }} {{ d.lname }}</b> at {{ d.address }}, to:
+		<div>
+		{% for di in d.dist_info %}
+		<pre> <b>{{di.fname}} {{di.lname}}</b>: {{ di.address }} </pre>
+		<div>
+		<pre> Distance: {{di.distance}}, expected travel time: {{ di.travel_time }}	</pre>
+		{% endfor %}
+	  {% endfor %}
     </p>
     </p>
 {% endblock %}
