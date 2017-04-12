@@ -7,14 +7,14 @@
     {% endif %}
   </head>
   <body>
-    <div>Senior Project: <a href="/index">Home</a> <a href="/addemp">Enter Employee</a> 
-	<a href="/addclient">Enter Client</a> <a href="/distances">View Distance Matrix</a></div>
+    <div>Senior Project: <a href="/index">Home</a> | <a href="/addemp">Enter Employee</a> |  
+	<a href="/addclient">Enter Client</a> | <a href="/distances">View Distances Between Employees and Clients</a></div>
     <hr>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     <ul>
     {% for message in messages %}
-        <li>{{ message }} </li>
+        <div>{{ message }} </div>
     {% endfor %}
     </ul>
     {% endif %}
