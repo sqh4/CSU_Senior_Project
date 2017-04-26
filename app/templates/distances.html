@@ -6,7 +6,7 @@
     <p>
       {% for d in distances %}
 		<div>
-		Travel info for <b>{{ d.fname }} {{ d.lname }}</b> at {{ d.address }}, to:
+		Travel info for <b>{{ d.fname }} {{ d.lname }}</b> at {{ d.address }}, via {{d.mode}} to:
 		<div>
 		{% for di in d.dist_info %}
 		<pre> <b>{{di.fname}} {{di.lname}}</b>: {{ di.address }} </pre>
