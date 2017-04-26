@@ -5,7 +5,7 @@
     <h2>List of employees</h2>
     {% for employee in employees %}
     <div>
-      {{ employee.fname }} {{ employee.lname }}: {{employee.address}}
+      {{ employee.fname }} {{ employee.lname }}: {{employee.address}}.  Transit mode: {{employee.mode}}
     </div>
     {% endfor %}
 
