@@ -4,22 +4,23 @@ import itertools
 from flask import render_template, flash, redirect
 from app import app
 from .forms import EmployeeForm, ClientForm
+from os import path
+
+ROOT = path.dirname(path.realpath(__file__))
 
 gmaps = googlemaps.Client(key='AIzaSyBO2_t1JfE-VN3MoEoqfsqulE_OVYhGkGs')
 
 
 @app.route('/')
 @app.route('/index')
-
-
 def index():
     return render_template('index.html',
                            title='Home',
                            employees=employees(), clients=clients())
 
 @app.route('/addemp', methods=['GET', 'POST'])
-def add_employee(): 
-    conn = sqlite3.connect('Database.db')
+def add_employee():
+    conn = sqlite3.connect(path.join(ROOT, 'Database.db'))
     form = EmployeeForm()
     dist_info = []
     msg=''
@@ -29,7 +30,7 @@ def add_employee():
             flash('Please check employee address and try again.')
             return redirect('/addemp')
         conn.execute("INSERT INTO Employee (FName, MName, LName, Address, Mode) VALUES (?,'',?,?,?)", [form.first_name.data, form.last_name.data, form.address.data, form.mode.data])
-        conn.commit()  
+        conn.commit()
         flash(form.first_name.data + ' ' + form.last_name.data + ' has been added to the employee record.')
         flash(msg)
         return redirect('/addemp')
@@ -41,7 +42,7 @@ def add_employee():
 
 @app.route('/addclient', methods=['GET', 'POST'])
 def add_client():
-    conn = sqlite3.connect('Database.db')
+    conn = sqlite3.connect(path.join(ROOT, 'Database.db'))
     form = ClientForm()
     msg = ''
     dist_info = []
@@ -89,7 +90,7 @@ def distances():
     return render_template('distances.html', title='Raw distance matrix', distances=dist_table())
 
 def employees():
-    conn = sqlite3.connect('Database.db')
+    conn = sqlite3.connect(path.join(ROOT, 'Database.db'))
     employee_list = []
     cursor = conn.execute("SELECT FName, MName, LName, Address, Mode FROM Employee")
     for row in cursor:
@@ -103,7 +104,7 @@ def employees():
     return employee_list
 
 def clients():
-    conn = sqlite3.connect('Database.db')
+    conn = sqlite3.connect(path.join(ROOT, 'Database.db'))
     client_list = []
     cursor = conn.execute("SELECT FName, MName, LName, Address FROM Client")
     for row in cursor:
