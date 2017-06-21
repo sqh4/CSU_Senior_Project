@@ -1,18 +1,58 @@
-<!-- extend base layout -->
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Senior Project</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='land.css') }}">
+</head>
+<body>
+<nav>
+    <ul>
+	    <li><a href="/index">Welcome</a></li>
+        <li><a href="/emplist">Employee List</a></li>
+		<li><a href="/clientlist">Client List</a></li>
+        <li><a href="/addemp">Enter Employee</a></li>
+        <li><a href="/addclient">Enter Client</a></li>
+        <li><a href="/distances">Distance Matrix</a></li>
+    </ul>
+</nav>
 
-{% block content %}
-    <h2>List of employees</h2>
-    {% for employee in employees %}
-    <div>
-      {{ employee.fname }} {{ employee.lname }}: {{employee.address}}.  Transit mode: {{employee.mode}}
-    </div>
-    {% endfor %}
+	<div class = "header">
+		<img src="/static/logo.png" width="40" height="40">
+		<div class="text">
+			Home Service Scheduler - Home Page
+		</div>
+	</div>
+</body>
+</html>
+<div class="wrapper">
+<div class="gallery">
+  <a href="/index">
+    <img src="/static/table.jpg" alt="View Index" width="300" height="200">
+  </a>
+  <div class="desc">Index</div>
+</div>
 
-    <h2>List of clients</h2>
-    {% for client in clients %}
-    <div>
-      {{ client.fname }} {{ client.lname }}: {{client.address}}
-    </div>
-    {% endfor %}
-{% endblock %}
+<div class="gallery">
+  <a href="/addemp">
+    <img src="/static/employee.jpg" alt="Add a new Employee" width="300" height="200">
+  </a>
+  <div class="desc">Add Employee</div>
+</div>
+
+<div class="gallery">
+  <a href="/addclient">
+    <img src="/static/client.jpg" alt="Add a new Client" width="300" height="200">
+  </a>
+  <div class="desc">Add Client</div>
+</div>
+
+<div class="gallery">
+  <a href="/distances">
+    <img src="/static/distances.jpg" alt="View distance between Clients and Employees" width="300" height="200">
+  </a>
+  <div class="desc">View Distance Matrix</div>
+</div>
+</div>
+</body>
+</html>

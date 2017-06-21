@@ -7,12 +7,19 @@
       {% for d in distances %}
 		<div>
 		Travel info for <b>{{ d.fname }} {{ d.lname }}</b> at {{ d.address }}, via {{d.mode}} to:
-		<div>
+		</div>
+		<table border=1px>
+		    <tr>
+		        <th>F. Name</th> <th>L. Name</th> <th>Address</th> <th>Distance</th> <th>Travel Time</th>
+		    </tr>
 		{% for di in d.dist_info %}
-		<pre> <b>{{di.fname}} {{di.lname}}</b>: {{ di.address }} </pre>
-		<div>
-		<pre> Distance: {{di.distance}}, expected travel time: {{ di.travel_time }}	</pre>
+		    <tr>
+		        <td>{{di.fname}}</td> <td>{{di.lname}}</td> <td>{{ di.address }}</td>
+		        <td>{{di.distance}}</td> <td>{{ di.travel_time }}</td>
+		    </tr>
 		{% endfor %}
+		</table>
+		<div>--</div>
 	  {% endfor %}
     </p>
     </p>

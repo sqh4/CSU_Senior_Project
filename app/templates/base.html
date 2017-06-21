@@ -1,14 +1,27 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    {% if title %}
-    <title>{{ title }} - Senior Project</title>
-    {% else %}
+<head lang="en">
+    <meta charset="UTF-8">
     <title>Senior Project</title>
-    {% endif %}
-  </head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='base.css') }}">
+</head>
   <body>
-    <div>Senior Project: <a href="/index">Home</a> | <a href="/addemp">Enter Employee</a> |  
-	<a href="/addclient">Enter Client</a> | <a href="/distances">View Distances Between Employees and Clients</a></div>
+	<nav>
+    <ul>
+	  <li><a href="/index">Welcome</a></li>
+        <li><a href="/emplist">Employee List</a></li>
+	  <li><a href="/clientlist">Client List</a></li>
+        <li><a href="/addemp">Enter Employee</a></li>
+        <li><a href="/addclient">Enter Client</a></li>
+        <li><a href="/distances">Distance Matrix</a></li>
+    </ul>
+	</nav>
+	<div class = "header">
+		<img src="/static/logo.png" width="60" height="60">
+		<div class = "text">
+			Home Service Scheduler
+		</div>
+	</div>
     <hr>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
