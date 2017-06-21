@@ -1,0 +1,16 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>{{ title }}</h2>
+    <form action="" method="post" name="edit employee">
+        {{ form.hidden_tag() }}
+			<div>Employee currently active: {{form.is_active}}</div>
+		    <div>First name: {{ form.first_name(size=40) }} </div>
+			<div>Last Name: {{ form.last_name(size=40) }} </div>
+			<div>Address: {{ form.address(size=80) }} </div>
+			<div>Method of transport: {{form.mode(size=1) }} </div>
+        <p><input type="submit" value="Enter"></p>
+    </form>
+{% endblock %}

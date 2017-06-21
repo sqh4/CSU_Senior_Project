@@ -1,0 +1,138 @@
+.all {
+  width: 800px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid gray;
+}
+#all {
+	max-width: 960px;
+	left: 10%;
+	float: left;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+    font-family: "Lucida Grande", "Helvetica Nueue", Arial, sans-serif;
+	background-color: LightCyan;
+}
+nav {
+    background-color: #333;
+    border: 1px solid #333;
+    color: #fff;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+	max-width: inherit;
+	max-height:30px;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav ul li {
+    margin: 0;
+    display: inline-block;
+    list-style-type: none;
+    transition: all 0.2s;
+		border-right: solid 2px grey;
+}
+
+nav > ul > li > a {
+    color: #aaa;
+    display: block;
+    line-height: 2em;
+		max-height: 40px;
+		vertical-align: middle;
+    text-decoration: none;
+		padding-left: 5px;
+		padding-right: 5px;
+}
+
+
+.header {
+	max-height: 80px;
+}
+
+.header .text {
+    font: 42pt oblique;
+    font-weight: 500;
+    display: inline-block;
+
+
+}
+
+#padding {
+	width: 3%;
+	float: left;
+}
+
+.wrapper {
+    width: 100%;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    background-color:#f00;
+    height:auto;
+    white-space:nowrap;
+}
+
+.info{
+	min-width: 280px;
+	max-width: 280px;
+	width: 20%;
+	float: left;
+	overflow: hidden;
+	padding-left: 10px;
+	border: 2px solid green;
+}
+
+.content{
+	float: left;
+	width: 75%;
+	overflow: hidden;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 2px solid blue;
+	max-width: 960px;
+}
+.container {
+	height: auto;
+    width: 1000px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#header {
+  background-color: #e2e393;
+  border-bottom: 3px solid black;
+  text-align: center;
+  width: 800px;
+  height: 100px;
+  padding-top: 1em;
+}
+
+.left {
+  float: left;
+  width: 200px;
+  clear: left;
+  border-right: 1px solid black;
+  height: auto;
+  padding-right: .5em;
+  padding-left: 1em;
+}
+.right {
+  float: left;
+  width: 580px;
+  height: 400px;
+  padding-left: .5em;
+}
+#footer {
+  width: 800px;
+  height: 60px;
+  text-align: center;
+  background-color: #e2e393;
+  border-top: 3px double black;
+  padding-bottom: 1em;
+  clear: both;
+}

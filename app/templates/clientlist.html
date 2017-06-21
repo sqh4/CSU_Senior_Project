@@ -1,0 +1,16 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>List of Clients</h3>
+	<form action="" method="post" name="employee list">
+        {{ form.hidden_tag() }}
+		{{ form.add_new }}
+		{{ form.edit }}
+		{{ form.manage_services }}
+		{{ form.mark_inactive }}
+		<div>
+		{{ form.selected(size=display_size) }}
+	</form>
+
+{% endblock %}

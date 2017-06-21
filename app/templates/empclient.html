@@ -1,0 +1,76 @@
+<!-- extend base layout -->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Senior Project</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='clientlist.css') }}">
+</head>
+  <body>
+	<nav>
+    <ul>
+	    <li><a href="/land">Welcome</a></li>
+        <li><a href="/EmpList">Employee List</a></li>
+	    <li><a href="/ClientList">Client List</a></li>
+        <li><a href="/addemp">Enter Employee</a></li>
+        <li><a href="/addclient">Enter Client</a></li>
+        <li><a href="/distances">Distance Matrix</a></li>
+    </ul>
+	</nav>
+	<div class = "header">
+		<img src="/static/logo.png" width="40" height="40">
+		<div class = "text"> 
+			<h1>Manage Clients for {{emp.fname}} {{emp.lname}}</h1>
+		</div>
+	</div>
+{% block content %}
+<body>
+	<div class= "return">
+		<h1><a href = "/EmpList">Return to Employee List</a></h1>
+	</div>
+<div class="container">
+<div class= "heading">
+	<div class = "text">
+		Active Clients
+	</div>
+</div>
+<table>
+	<th>Fname</th>
+	<th>Lname</th>
+	<th>Address</th>
+	<th>Select</th>
+    {% for client in client %}
+	<tr>
+        <td>{{ booked.fname }}</td>
+		<td>{{ booked.lname }}</td>
+		<td>{{booked.address}}</td>
+		<td></td>
+	</tr>
+	
+	{% endfor %}
+</table>
+<div class= "spacing"></div>
+<div class= "heading">
+	<div class = "text">
+		Potential Clients
+	</div>
+</div>
+<table>
+	<th>Fname</th>
+	<th>Lname</th>
+	<th>Address</th>
+	<th>Select</th>
+    {% for client in client %}
+	<tr>
+        <td>{{ clients.fname }}</td>
+		<td>{{ clients.lname }}</td>
+		<td>{{clients.address}}</td>
+		<td></td>
+	</tr>
+	
+	{% endfor %}
+</table>
+</div>
+</body>
+{% endblock %}
+</html>
